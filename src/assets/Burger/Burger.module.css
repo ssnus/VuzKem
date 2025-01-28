@@ -1,0 +1,59 @@
+.top,
+.bottom,
+.middle {
+  height: 4px;
+  width: 25px;
+  border-radius: 2px;
+  background-color: black;
+}
+
+.burger {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translate(0%, -50%);
+  cursor: pointer;
+  z-index: 11;
+}
+
+.burgerNav {
+  display: none;
+  flex-direction:column;
+  gap: 20px;
+  position: absolute;
+  z-index: 10;
+  width: 97vw;
+  background-color: #ffe5ac;
+  top: 30%;
+  right: 50%;
+  transform: translate(50%,0%);
+  padding: 10px 30px 24px;
+  border-radius:10px ;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.burgerNavActive{
+  display: flex;
+  opacity: 1;
+  transition: 0.4s ease-in-out;
+}
+
+.middleActive{
+  display: none;
+}
+
+.topActive{
+  transform: rotate(45deg);
+  transition: 0.4s ease-in-out;
+}
+
+.bottomActive{
+  position: absolute;
+  transform: rotate(-45deg);
+  transition: 0.4s ease-in-out;
+}

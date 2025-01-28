@@ -1,0 +1,375 @@
+.manImg {
+  height: calc(97vh - 120px);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.airplaneImg {
+  width: 50%;
+  position: absolute;
+  top: -135px;
+  left: -49px;
+}
+
+.main {
+  width: 100%;
+  height: calc(100vh - 120px);
+  position: relative;
+  background-color: #fac770;
+  overflow: hidden;
+}
+
+.mainText {
+  height: calc(100vh - 120px);
+  margin-left: 54px;
+  max-width: 908px;
+  padding-top: 252px;
+  z-index: 3;
+  position: relative;
+}
+
+.mainText h1 {
+  font-size: 4rem;
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-wrap: wrap;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.mainText h2 {
+  font-size: 3rem;
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.spanMainText {
+  display: flex;
+
+  justify-content: center;
+  background-color: #ffe5ac;
+  border-radius: 999px;
+  width: 410px;
+  height: 80px;
+  flex-wrap: nowrap;
+}
+
+.firstSpan {
+  position: absolute;
+  right: 0;
+  top: 172px;
+  align-items: center;
+}
+
+.secondSpan {
+  color: #f46324;
+  text-shadow: none;
+}
+
+.firstP {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+/*Вторая секция*/
+.secondInfoBlock {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #d0f0e4;
+  padding-top: 191px;
+  position: relative;
+}
+
+.specPredlogBlock {
+  width: 100%;
+  padding: 0px 160px;
+  display: flex;
+  align-items: center;
+  gap: 140px;
+  position: relative;
+}
+
+.specPredlogBlock h1 {
+  font-size: 4rem;
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 560px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.specPredlogBlockDop p {
+  font-size: 1.25rem;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  max-width: 540px;
+}
+
+.lampImg {
+  position: absolute;
+  width: 240px;
+  top: -150px;
+  left: 613px;
+}
+
+.springImg {
+  position: absolute;
+  width: 160px;
+  top: 0px;
+  right: 0;
+  margin: 37px;
+}
+
+.cardInfo {
+  width: 100%;
+  min-height: calc(100vh - 453px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 77px 160px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/*Третия секция*/
+.thirdSection {
+  background-color: #d0f0e4;
+}
+
+.textContaner {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 25px 160px;
+  height: 235px;
+  z-index: 2;
+}
+
+.textContaner h1 {
+  font-size: 4rem;
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.textContaner span {
+  position: relative;
+  color: black;
+  font-weight: 400;
+}
+
+.waveLineImg {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, 120%);
+}
+
+.mapBlock {
+  width: 100%;
+  height: calc(100vh - 235px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 75px;
+}
+
+.mapStudent {
+  width: 60%;
+  height: fit-content;
+}
+
+/*Стили для мобильных устройств*/
+.mainMobile {
+  width: 100%;
+  height: calc(100vh - 120px);
+  position: relative;
+  background-color: #fac770;
+  overflow: hidden;
+}
+
+.mainTextMobile {
+  height: calc(100vh - 120px);
+  position: relative;
+  margin-left: 10px;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.mainTextMobile h1 {
+  font-size: 1.5rem;
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mainTextMobile h2 {
+  font-size: 1.1rem;
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.spanMainTextMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe5ac;
+  border-radius: 999px;
+  padding: 2px 6px;
+}
+
+.firstSpanMobile {
+  position: absolute;
+  top: -25px;
+  color: black;
+}
+
+.secondSpanMobile {
+  color: #f46324;
+  position: relative;
+  margin-left: 5px;
+}
+
+.firstPMobile {
+  font-family: Raleway, serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.1rem;
+  margin-top: 40px;
+
+  margin-bottom: 40px;
+  margin-right: 30%;
+}
+
+.manImgMobile {
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+/*Вторая секция мобильных устройств*/
+.secondInfoBlockMobile {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #d0f0e4;
+  padding-top: 100px;
+  position: relative;
+}
+
+.specPredlogBlockMobile {
+  width: 100%;
+  padding: 0px 10px;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  flex-direction: column;
+}
+
+.specPredlogBlockMobile h1 {
+  font-size: 1.5rem;
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 560px;
+}
+
+.lampImgMobile {
+  position: absolute;
+  width: 120px;
+  top: 20%;
+  left: 67%;
+}
+
+.cardInfoMobile {
+  width: 100%;
+  min-height: calc(100vh - 453px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 77px 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/*Третия секция мобильных устройств*/
+.thirdSectionMobile {
+  background-color: #d0f0e4;
+  height: 100vh;
+}
+
+.textContanerMobile {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 25px 10px 25px 10px;
+  z-index: 2;
+}
+
+.textContanerMobile h1 {
+  font-size: 1.65rem;
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.textContanerMobile span {
+  position: relative;
+  color: black;
+  font-weight: 400;
+}
+
+.waveLineImgMobile {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, 120%);
+  width: 180px;
+}
+
+.mapBlockMobile {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+ padding-top: 30px;
+}
+
+.mapStudentMobile {
+  width: 60%;
+  height: fit-content;
+}

@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Стилизация полосы прокрутки */
+body::-webkit-scrollbar {
+  width: 12px; /* Ширина полосы прокрутки */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* Цвет зоны отслеживания */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #418bf9; /* Цвет бегунка */
+  border-radius: 20px; /* Округление бегунка */
+  border: 3px solid #418bf9; /* Отступ вокруг бегунка */
+}
+
+.slide-up-enter {
+    transform: translateY(100vh);
+  }
+  
+  .slide-up-enter.slide-up-enter-active {
+    transform: translateY(0);
+    transition: transform 0.5s;
+  }
+  
+  .slide-up-exit {
+    transform: translateY(0);
+  }
+  
+  .slide-up-exit.slide-up-exit-active {
+    transform: translateY(-100vh);
+    transition: transform 0.5s;
+  }
+  
