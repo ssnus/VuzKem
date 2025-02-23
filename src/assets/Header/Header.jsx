@@ -1,17 +1,18 @@
-import Link from "../Link/Link";
+import LinkComponent from "../Link/Link";
 import Button from "../Button/Button";
 import classes from "./Header.module.css";
 import Burger from "../Burger/Burger";
-
-import { PropTypes } from "prop-types";
 import { useState, useEffect } from "react";
-export default function Header({ linkClick, logoClick, valueColor, isActiveLink }) {
+import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+export default function Header() {
   const [isClickBurger, setIsClickBurger] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1205) {
+      if (window.innerWidth >= 1240) {
         setIsMobile(false);
       } else {
         setIsMobile(true);
@@ -29,33 +30,27 @@ export default function Header({ linkClick, logoClick, valueColor, isActiveLink 
       window.removeEventListener("resize", handleResize);
     };
   }, [setIsMobile]);
-
-  const BurgerClick = (value) => {
-    linkClick(value);
-    setIsClickBurger(false);
-  };
   return (
     <>
       {!isMobile ? (
         <header
           className={
-            valueColor === "home"
+            location.pathname === "/"
               ? `${classes.header} ${classes.colorOne}`
               : `${classes.header} ${classes.colorTwo}`
           }
         >
           <div className={classes.nav}>
-            <Link handleClick={linkClick} value="vuz" isActive={isActiveLink}>
-              Вузы
-            </Link>
-            <Link value="свыс">Специальности</Link>
+            <LinkComponent to="/vuz">Вузы</LinkComponent>
+            <LinkComponent to="/specialties">Специальности</LinkComponent>
           </div>
-          <h2 onClick={() => logoClick("home")} className={classes.logo}>
-            VUZKEM
-          </h2>
+          <NavLink to="/" className={classes.logo}>
+            <h2>VUZKEM</h2>
+          </NavLink>
+
           <div className={classes.nav}>
-            <Link>О Нас</Link>
-            <Link>Авторизация</Link>
+            <LinkComponent>О Нас</LinkComponent>
+            <LinkComponent>Авторизация</LinkComponent>
             <Button
               decorateType="account"
               onClick={() => {
@@ -69,30 +64,24 @@ export default function Header({ linkClick, logoClick, valueColor, isActiveLink 
       ) : (
         <header
           className={
-            valueColor === "home"
-              ? `${classes.header} ${classes.mobileHeader} ${classes.colorOne}`
-              : `${classes.header} ${classes.mobileHeader} ${classes.colorTwo}`
+            location.pathname === "/"
+              ? `${classes.mobileHeader} ${classes.colorOne}`
+              : `${classes.mobileHeader} ${classes.colorTwo}`
           }
         >
-          <h2 onClick={() => logoClick("home")}>VUZKEM</h2>
-          <div className={classes.burgerContainer}>
+          <NavLink to="/" className={classes.logo}>
+            <h2>VUZKEM</h2>
+          </NavLink>
             <Burger
+              BurgerClick={()=> setIsClickBurger(false)}
+
               onClick={() => {
                 setIsClickBurger(!isClickBurger);
               }}
               ClickBurger={isClickBurger}
-              BurgerClick={BurgerClick}
             />
-          </div>
         </header>
       )}
     </>
   );
 }
-
-Header.propTypes = {
-  linkClick: PropTypes.func.isRequired,
-  logoClick: PropTypes.func.isRequired,
-  valueColor: PropTypes.string.isRequired,
-  isActiveLink: PropTypes.boolean,
-};

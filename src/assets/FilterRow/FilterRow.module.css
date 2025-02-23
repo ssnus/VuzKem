@@ -1,180 +1,932 @@
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0px 54px;
-  height: 80px;
-  background-color: #D0F0E4;
-  flex-wrap: wrap;
-  gap: 10px;
+@media (min-width: 300px) {
+  .spanA {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .rowVuz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px;
+    height: 80px;
+    background-color: #d0f0e4;
+    gap: 50px;
+    flex-wrap: nowrap;
+    min-width: 375px;
+  }
+
+  .inputBlockVuz {
+    width: 100%;
+    position: relative;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #d0f0e4;
+    gap: 20px;
+    flex-wrap: wrap-reverse;
+  }
+
+  .textToogle {
+    font-size: 1.5rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .textToogleActive {
+    font-size: 1.9rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .toogle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: 240px;
+    align-items: center;
+    background-color: rgba(65, 139, 249, 27%);
+    position: relative;
+    border-radius: 30px;
+    padding: 0px 20px;
+    box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 25%);
+  }
+
+  .activeToogle {
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    border-radius: 30px;
+    transform: translate(-17%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .activeToogleActive {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    border-radius: 30px;
+    transform: translate(47%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .dropbtn {
+    background-color: #d9d9d9;
+    color: rgb(0, 0, 0);
+    padding: 11px 100px 11px 33px;
+    width: 335px;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* контейнер <div> - необходим для размещения выпадающего содержимого */
+  .MenuLevelEducaten {
+    position: relative;
+    display: inline-block;
+  }
+
+  .imgDropMenu {
+    rotate: 0deg;
+    transition: 0.6s ease-in-out;
+    position: absolute;
+    right: 35px;
+    top: 12px;
+    width: 30px;
+  }
+
+  .imgDropMenuOpen {
+    rotate: 180deg;
+    transition: 0.6s ease-in-out;
+    position: absolute;
+    right: 35px;
+    top: 12px;
+    width: 30px;
+  }
+
+  /* Выпадающей контент (по умолчанию скрыт) */
+  .dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 332px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* Ссылки внутри выпадающего списка */
+  .blockCheck {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+
+  .StyleCheck {
+    width: 23px;
+    height: 23px;
+  }
+
+  .dropdown_content label {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.25rem;
+  }
+
+  .dropdown_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.25rem;
+  }
+
+  /* Изменить цвет выпадающих ссылок при наведении */
+  .dropdown_content a:hover {
+    background-color: #d4d4d4;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  /* Показать выпадающее меню при наведении */
+  .dropdown_contentOpen {
+    display: block;
+  }
+
+  /* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
+  .dropbtnOpen {
+    background-color: #b7b1b1;
+  }
+
+  .inputBlock {
+    width: 100%;
+    position: relative;
+  }
+
+  .input {
+    height: 60px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 1.25rem;
+    border: none;
+    background-color: #ffd6c5;
+    padding-left: 20px;
+    outline: none;
+  }
+
+  .imgSearch {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    transform: translate(50%, -50%);
+  }
 }
 
-.textToogle {
-  font-size: 1.5rem;
-  font-family: "Raleway", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  z-index: 3;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
+@media (min-width: 420px) {
+  .spanA {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .rowVuz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px 54px;
+    height: 80px;
+    background-color: #d0f0e4;
+    gap: 50px;
+    flex-wrap: nowrap;
+    min-width: 375px;
+  }
+
+  .inputBlockVuz {
+    width: 100%;
+    position: relative;
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #d0f0e4;
+    gap: 20px;
+    flex-wrap: wrap-reverse;
+  }
+
+  .textToogle {
+    font-size: 1.5rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .textToogleActive {
+    font-size: 1.9rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .toogle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: 240px;
+    align-items: center;
+    background-color: rgba(65, 139, 249, 27%);
+    position: relative;
+    border-radius: 30px;
+    padding: 0px 20px;
+    box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 25%);
+  }
+
+  .activeToogle {
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    border-radius: 30px;
+    transform: translate(-17%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .activeToogleActive {
+    position: absolute;
+    width: 140px;
+    height: 50px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    border-radius: 30px;
+    transform: translate(58%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .dropbtn {
+    background-color: #d9d9d9;
+    color: rgb(0, 0, 0);
+    min-width: 360px;
+    padding: 11px 100px 11px 33px;
+    font-size: 1.75rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* контейнер <div> - необходим для размещения выпадающего содержимого */
+  .MenuLevelEducaten {
+    position: relative;
+    display: inline-block;
+  }
+
+  .imgDropMenu {
+    rotate: 0deg;
+    transition: 0.6s ease-in-out;
+    position: absolute;
+    right: 35px;
+    top: 12px;
+  }
+
+  .imgDropMenuOpen {
+    rotate: 180deg;
+    transition: 0.6s ease-in-out;
+    position: absolute;
+    right: 35px;
+    top: 12px;
+  }
+
+  /* Выпадающей контент (по умолчанию скрыт) */
+  .dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 332px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* Ссылки внутри выпадающего списка */
+  .blockCheck {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+
+  .StyleCheck {
+    width: 23px;
+    height: 23px;
+  }
+
+  .dropdown_content label {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.25rem;
+  }
+
+  .dropdown_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.25rem;
+  }
+
+  /* Изменить цвет выпадающих ссылок при наведении */
+  .dropdown_content a:hover {
+    background-color: #d4d4d4;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  /* Показать выпадающее меню при наведении */
+  .dropdown_contentOpen {
+    display: block;
+  }
+
+  /* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
+  .dropbtnOpen {
+    background-color: #b7b1b1;
+  }
+
+  .inputBlock {
+    width: 100%;
+    position: relative;
+  }
+
+  .input {
+    height: 60px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #ffd6c5;
+    padding-left: 40px;
+    outline: none;
+  }
+
+  .imgSearch {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    transform: translate(50%, -50%);
+  }
 }
 
-.textToogleActive {
-  font-size: 2rem;
-  font-family: "Raleway", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  z-index: 3;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
+@media (min-width: 1300px) {
+  .spanA {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .rowVuz {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0px 54px;
+    height: 80px;
+    background-color: #d0f0e4;
+    gap: 50px;
+    flex-wrap: nowrap;
+    min-width: 375px;
+  }
+
+  .inputBlockVuz {
+    width: 550px;
+    position: relative;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 54px;
+    height: 80px;
+    background-color: #d0f0e4;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .textToogle {
+    font-size: 1.5rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .textToogleActive {
+    font-size: 2rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .toogle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    width: 396px;
+    gap: 114px;
+    align-items: center;
+    background-color: rgba(65, 139, 249, 27%);
+    position: relative;
+    border-radius: 30px;
+    padding: 0px 57px;
+    box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 25%);
+  }
+
+  .activeToogle {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    border-radius: 30px;
+    transform: translate(-29%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .activeToogleActive {
+    position: absolute;
+    width: 224px;
+    height: 60px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    border-radius: 30px;
+    transform: translate(52%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .dropbtn {
+    background-color: #d9d9d9;
+    color: rgb(0, 0, 0);
+    min-width: 390px;
+    padding: 11px 100px 11px 33px;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* контейнер <div> - необходим для размещения выпадающего содержимого */
+  .MenuLevelEducaten {
+    position: relative;
+    display: inline-block;
+  }
+
+  .imgDropMenu {
+    rotate: 0deg;
+    transition: 0.6s ease-in-out;
+    position: absolute;
+    right: 35px;
+    top: 12px;
+  }
+
+  .imgDropMenuOpen {
+    rotate: 180deg;
+    transition: 0.6s ease-in-out;
+    position: absolute;
+    right: 35px;
+    top: 12px;
+  }
+
+  /* Выпадающей контент (по умолчанию скрыт) */
+  .dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 332px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* Ссылки внутри выпадающего списка */
+  .blockCheck {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+
+  .StyleCheck {
+    width: 23px;
+    height: 23px;
+  }
+
+  .dropdown_content label {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+
+  .dropdown_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+
+  /* Изменить цвет выпадающих ссылок при наведении */
+  .dropdown_content a:hover {
+    background-color: #d4d4d4;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  /* Показать выпадающее меню при наведении */
+  .dropdown_contentOpen {
+    display: block;
+  }
+
+  /* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
+  .dropbtnOpen {
+    background-color: #b7b1b1;
+  }
+
+  .inputBlock {
+    width: 100%;
+    position: relative;
+    min-width: 375px;
+  }
+
+  .input {
+    height: 60px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #ffd6c5;
+    padding-left: 40px;
+    outline: none;
+  }
+
+  .imgSearch {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    transform: translate(50%, -50%);
+  }
 }
 
-.toogle {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 60px;
-  width: 396px;
-  gap: 114px;
-  align-items: center;
-  background-color: rgba(65, 139, 249, 27%);
-  position: relative;
-  border-radius: 30px;
-  padding: 0px 57px;
-  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 25%);
-}
+@media (min-width: 1500px) {
+  .spanA {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-.activeToogle {
-  position: absolute;
-  width: 200px;
-  height: 60px;
-  background-color: #d9d9d9;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
-  border-radius: 30px;
-  transform: translate(-29%);
-  transition: 0.3s ease-in-out;
-}
+  .rowVuz {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0px 54px;
+    height: 80px;
+    background-color: #d0f0e4;
+    gap: 50px;
+    flex-wrap: nowrap;
+    min-width: 375px;
+  }
 
-.activeToogleActive {
-  position: absolute;
-  width: 224px;
-  height: 60px;
-  background-color: #d9d9d9;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
-  border-radius: 30px;
-  transform: translate(52%);
-  transition: 0.3s ease-in-out;
-}
+  .inputBlockVuz {
+    width: 550px;
+    position: relative;
+  }
 
-.dropbtn {
-  background-color: #d9d9d9;
-  color: rgb(0, 0, 0);
-  min-width: 350px;
-  padding: 11px 100px 11px 33px;
-  font-size: 2rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 30px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 54px;
+    height: 80px;
+    background-color: #d0f0e4;
+    gap: 50px;
+    flex-wrap: nowrap;
+    min-width: 375px;
+  }
 
-  font-family: "Raleway", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+  .textToogle {
+    font-size: 1.5rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
 
-/* контейнер <div> - необходим для размещения выпадающего содержимого */
-.MenuLevelEducaten {
-  position: relative;
-  display: inline-block;
-}
+  .textToogleActive {
+    font-size: 2rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
 
-.imgDropMenu {
-  rotate: 0deg;
-  transition: 0.6s ease-in-out;
-  position: absolute;
-  right: 35px;
-  top: 7px;
-}
+  .toogle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    min-width: 396px;
+    gap: 114px;
+    align-items: center;
+    background-color: rgba(65, 139, 249, 27%);
+    position: relative;
+    border-radius: 30px;
+    padding: 0px 57px;
+    box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 25%);
+  }
 
-.imgDropMenuOpen {
-  rotate: 180deg;
-  transition: 0.6s ease-in-out;
-  position: absolute;
-  right: 35px;
-  top: 7px;
-}
+  .activeToogle {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    border-radius: 30px;
+    transform: translate(-29%);
+    transition: 0.3s ease-in-out;
+  }
 
-/* Выпадающей контент (по умолчанию скрыт) */
-.dropdown_content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 332px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 10px;
-}
+  .activeToogleActive {
+    position: absolute;
+    width: 224px;
+    height: 60px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
+    border-radius: 30px;
+    transform: translate(52%);
+    transition: 0.3s ease-in-out;
+  }
 
-/* Ссылки внутри выпадающего списка */
-.dropdown_content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+  .dropbtn {
+    background-color: #d9d9d9;
+    color: rgb(0, 0, 0);
+    min-width: 390px;
+    padding: 11px 100px 11px 33px;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
-  font-family: "Raleway", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.5rem;
-}
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-/* Изменить цвет выпадающих ссылок при наведении */
-.dropdown_content a:hover {
-  background-color: #d4d4d4;
-  cursor: pointer;
-  border-radius: 10px;
-}
+  /* контейнер <div> - необходим для размещения выпадающего содержимого */
+  .MenuLevelEducaten {
+    position: relative;
+    display: inline-block;
+  }
 
-/* Показать выпадающее меню при наведении */
-.dropdown_contentOpen {
-  display: block;
-}
+  .imgDropMenu {
+    rotate: 0deg;
+    transition: 0.6s ease-in-out;
+    position: absolute;
+    right: 35px;
+    top: 12px;
+    width: 40px;
+  }
 
+  .imgDropMenuOpen {
+    rotate: 180deg;
+    transition: 0.6s ease-in-out;
+    position: absolute;
+    right: 35px;
+    top: 12px;
+    width: 40px;
+  }
 
-/* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
-.dropbtnOpen {
-  background-color: #b7b1b1;
-}
+  /* Выпадающей контент (по умолчанию скрыт) */
+  .dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 332px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    padding-bottom: 10px;
+    max-height: 224px;
+    overflow: overlay;
+    overscroll-behavior-y: contain;
+  }
 
+  .blockCheck {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
 
-.inputBlock{
-  width: 100%;
-  position: relative;
-  max-width: 720px;
-}
+  .StyleCheck {
+    width: 23px;
+    height: 23px;
+  }
 
+  /* Ссылки внутри выпадающего списка */
+  .dropdown_content label {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
 
-.input{
-  height: 60px;
-  width: 100%;
-  border-radius: 30px;
-  font-size: 1.5rem;
-  border: none;
-  background-color: #FFD6C5;
-  padding-left: 40px;
-  outline: none;
-}
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
 
-.imgSearch{
-  position: absolute;
-  right: 30px;
-  top: 30px;
-  transform: translate(50%,-50%);
+  /* Изменить цвет выпадающих ссылок при наведении */
+  .dropdown_content :hover {
+    background-color: #d4d4d4;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  /* Показать выпадающее меню при наведении */
+  .dropdown_contentOpen {
+    display: block;
+  }
+
+  /* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
+  .dropbtnOpen {
+    background-color: #b7b1b1;
+  }
+
+  .inputBlock {
+    width: 100%;
+    position: relative;
+  }
+
+  .input {
+    height: 60px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #ffd6c5;
+    padding-left: 40px;
+    padding-right: 50px;
+    outline: none;
+  }
+
+  .imgSearch {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    transform: translate(50%, -50%);
+  }
 }

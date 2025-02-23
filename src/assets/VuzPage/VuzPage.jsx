@@ -6,6 +6,7 @@ export default function VuzPage() {
   const [isMobile, setIsMobile] = useState(false);
   const [vuzList, setData] = useState([]);
   const [error, setError] = useState(null);
+  const[value, setValue] = useState("")
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,13 +36,23 @@ export default function VuzPage() {
         .catch(error => setError(error));
 }, []);
 
+{error ? "Ошибка загрузки данных" : null}
+
+  const handleChange = (event) => {
+    setValue(event.target.value); // Обновляем состояние
+  };
+
+  const filteredVuzList = vuzList.filter(vuz =>
+    vuz.name.toLowerCase().includes(value.toLowerCase())
+);
+
   return (
     <>
-      <FilterRow/>
+      <FilterRow isVuz={true} inputChange={handleChange}/>
       <section
         className={!isMobile ? classes.gridBlock : classes.gridBlockMobile}
       >
-        {vuzList.map((vuz) => (
+        {filteredVuzList.map((vuz) => (
           <VuzCard
             key={vuz.id}
             nameVuz={vuz.name}

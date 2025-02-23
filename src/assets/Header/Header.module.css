@@ -22,15 +22,20 @@ h2 {
 }
 
 .mobileHeader {
+  display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .mobileHeader h2 {
   font-size: 1.9rem;
+  text-align: center;
 }
 
 .logo {
   cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 
 .colorOne {

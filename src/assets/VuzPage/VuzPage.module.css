@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(866px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(280px, 280px));
-  padding: 100px 50px;
+  padding: 70px 50px;
   gap: 20px;
   background-color: #d0f0e4;
 }

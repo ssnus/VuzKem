@@ -1,4 +1,4 @@
-import Link from "../Link/Link";
+import LinkComponent from "../Link/Link";
 import Button from "../Button/Button";
 import classes from "./Burger.module.css";
 import { PropTypes } from "prop-types";
@@ -41,12 +41,14 @@ export default function Burger({ onClick, ClickBurger, BurgerClick }) {
         >
           Присоединиться
         </Button>
-        <Link handleClick={BurgerClick} value="vuz">
+        <LinkComponent handleClick={BurgerClick} to="/vuz">
           Вузы
-        </Link>
-        <Link>Специальности</Link>
-        <Link>Программы</Link>
-        <Link>О нас</Link>
+        </LinkComponent>
+        <LinkComponent handleClick={BurgerClick} to="/specialties">
+          Специальности
+        </LinkComponent>
+        <LinkComponent handleClick={BurgerClick}>Программы</LinkComponent>
+        <LinkComponent handleClick={BurgerClick}>О нас</LinkComponent>
       </div>
     </>
   );

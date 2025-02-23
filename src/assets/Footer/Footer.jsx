@@ -1,12 +1,13 @@
-import Link from "../Link/Link";
+import LinkComponent from "../Link/Link";
 import classes from "./Footer.module.css";
 import vkIcon from "../pic/Footer/vk.png";
 import telegramIcon from "../pic/Footer/telegram.png";
 import gmailIcon from "../pic/Footer/email.png";
 
 import { useState, useEffect } from "react";
-import { PropTypes } from "prop-types";
-export default function Footer({ linkClick, logoClick }) {
+import { NavLink } from "react-router-dom";
+
+export default function Footer() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -36,29 +37,28 @@ export default function Footer({ linkClick, logoClick }) {
         <div className={isMobile ? classes.navMobile : classes.nav}>
           <div className={classes.columnNav}>
             <h3 className={classes.columnNavH3}>Работа с сайтом</h3>
-            <Link handleClick={linkClick} value={"vuz"}>
-              Вузы
-            </Link>
-            <Link>Специальности</Link>
-            <Link>Программы</Link>
-            <Link>Авторизация</Link>
+            <LinkComponent to="/vuz">Вузы</LinkComponent>
+            <LinkComponent to="/specialties">Специальности</LinkComponent>
+            <LinkComponent>Авторизация</LinkComponent>
           </div>
 
           <div className={classes.columnNav}>
             <h3 className={classes.columnNavH3}>Компания</h3>
-            <Link>О нас</Link>
-            <Link>Связаться с нами</Link>
+            <LinkComponent>О нас</LinkComponent>
+            <LinkComponent>Связаться с нами</LinkComponent>
           </div>
 
           <div className={classes.columnNav}>
             <h3 className={classes.columnNavH3}>Информация</h3>
-            <Link>FAQ</Link>
-            <Link>Поддержать нас</Link>
+            <LinkComponent>FAQ</LinkComponent>
+            <LinkComponent>Поддержать нас</LinkComponent>
           </div>
         </div>
         <span className={classes.footerSpan}></span>
         <div className={classes.footerBottom}>
-          <h2 onClick={() => logoClick("home")} className={classes.logo}>VUZKEM</h2>
+          <NavLink to="/" className={classes.logo}>
+            <h2>VUZKEM</h2>
+          </NavLink>
           <div className={classes.socialNetwork}>
             <img src={vkIcon} alt="vk" />
             <img src={telegramIcon} alt="vk" />
@@ -69,8 +69,3 @@ export default function Footer({ linkClick, logoClick }) {
     </>
   );
 }
-
-Footer.propTypes = {
-  linkClick: PropTypes.func.isRequired,
-  logoClick: PropTypes.func.isRequired,
-};

@@ -9,12 +9,12 @@ import waveLine from "../pic/HomePage/waveLine.png";
 import mapStudent from "../pic/HomePage/mapStudent.png";
 import mapStudentMobile from "../pic/HomePage/mapStudentMobile.png";
 
+import { NavLink } from "react-router-dom";
 import classes from "./HomePage.module.css";
 import Button from "../Button/Button";
 import Card from "./Card/Card";
 import { useState, useEffect } from "react";
-import { PropTypes } from "prop-types";
-export default function HomePage({ buttonClick }) {
+export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -64,12 +64,9 @@ export default function HomePage({ buttonClick }) {
                 интересам. Мы поможем тебе сделать первый шаг к успешной
                 карьере!
               </p>
-              <Button
-                decorateType="orange"
-                onClick={() => buttonClick("vuz")}
-              >
-                Найти вуз
-              </Button>
+              <NavLink to="/vuz">
+                <Button decorateType="orange">Найти вуз</Button>
+              </NavLink>
             </section>
           </main>
           <section className={classes.secondInfoBlock}>
@@ -83,14 +80,9 @@ export default function HomePage({ buttonClick }) {
                   карьере, используя нашу обширную базу данных и индивидуальный
                   подход к каждому студенту.
                 </p>
-                <Button
-                  decorateType="account"
-                  onClick={() => {
-                    buttonClick("vuz");
-                  }}
-                >
-                  Смотреть все вузы
-                </Button>
+                <NavLink to="/vuz" className={classes.logo}>
+                  <Button decorateType="account">Смотреть все вузы</Button>
+                </NavLink>
               </section>
             </section>
             <section className={classes.cardInfo}>
@@ -162,15 +154,11 @@ export default function HomePage({ buttonClick }) {
                 интересам. Мы поможем тебе сделать первый шаг к успешной
                 карьере!
               </p>
-              <Button
-                decorateType="orange"
-                onClick={() => {
-                  buttonClick("vuz");
-                }}
-                isMobile={isMobile}
-              >
-                Найти вуз
-              </Button>
+              <NavLink to="/vuz" className={classes.logo}>
+                <Button decorateType="orange" isMobile={isMobile}>
+                  Найти вуз
+                </Button>
+              </NavLink>
             </section>
             <img className={classes.manImgMobile} src={man} />
           </main>
@@ -178,14 +166,9 @@ export default function HomePage({ buttonClick }) {
             <section className={classes.specPredlogBlockMobile}>
               <img className={classes.lampImgMobile} src={lamp} />
               <h1>Специальное будущее только для тебя</h1>
-              <Button
-                decorateType="account"
-                onClick={() => {
-                  buttonClick("vuz");
-                }}
-              >
-                Смотреть все вузы
-              </Button>
+              <NavLink to="/vuz" className={classes.logo}>
+                <Button decorateType="account">Смотреть все вузы</Button>
+              </NavLink>
             </section>
             <section className={classes.cardInfoMobile}>
               <Card
@@ -214,13 +197,16 @@ export default function HomePage({ buttonClick }) {
                 Присоединяйся к самому большому{" "}
                 <span>
                   сообществу
-                  <img className={classes.waveLineImgMobile } src={waveLine} />
+                  <img className={classes.waveLineImgMobile} src={waveLine} />
                 </span>{" "}
                 по поиску университетов
               </h1>
             </div>
-            <section className={classes.mapBlockMobile }>
-              <img className={classes.mapStudentMobile } src={mapStudentMobile} />
+            <section className={classes.mapBlockMobile}>
+              <img
+                className={classes.mapStudentMobile}
+                src={mapStudentMobile}
+              />
               <Button
                 decorateType="account"
                 onClick={() => {
@@ -236,7 +222,3 @@ export default function HomePage({ buttonClick }) {
     </>
   );
 }
-
-HomePage.propTypes = {
-  buttonClick: PropTypes.func.isRequired,
-};

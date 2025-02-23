@@ -1,19 +1,24 @@
-import classes from './Link.module.css'
+import classes from "./Link.module.css";
+import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
-export default function Link({ children, handleClick, value, isActive }) {
+import { useLocation } from "react-router-dom";
+export default function LinkComponent({ children, to, handleClick }) {
+  const location = useLocation();
+
   return (
     <>
       <div className={classes.blockLink}>
-        <a className={classes.link} onClick={()=>handleClick(value)}>{children}</a>
-        {isActive === value ? (<span className={classes.span}></span>) : null}
+        <Link to={to} onClick={handleClick} className={classes.link}>
+          {children}
+        </Link>
+        {location.pathname === to ? <span className={classes.span}></span> : null}
       </div>
     </>
   );
 }
 
-Link.propTypes = {
-  children: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-  isActive: PropTypes.string,
-}
+LinkComponent.propTypes = {
+  children: PropTypes.string,
+  to: PropTypes.string,
+  handleClick: PropTypes.func,
+};
